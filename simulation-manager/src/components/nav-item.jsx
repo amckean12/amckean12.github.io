@@ -3,7 +3,9 @@ import React from 'react';
 
 const NavItem = props => {
     return(
-        "Hello"
+        <li class="nav-item">
+            <a class="nav-link" href="#">{props.name}</a>
+        </li>
     );
 }
 
