@@ -1,0 +1,12 @@
+{
+    "config": {
+        "header": {
+            "title": "Simulation Manager",
+            "nav-items": ["Simulation Scheduler", "Active Que", "Process Tracker", "Settings"],
+            "logo": "Wood."
+        },
+        "body": {
+
+        }
+    }
+}

@@ -7,21 +7,18 @@ class Header extends React.Component {
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <a class="navbar-brand" href="#">Wood.</a>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav mr-auto">
+                        <ul class="navbar-nav w-100">
                             <li class="nav-item px-4">
-                                <a class="nav-link" href="#">Link</a>
+                                <a class="nav-link" href="#">Simulation Scheduler</a>
                             </li>
                             <li class="nav-item px-4">
-                                <a class="nav-link" href="#">Link 2</a>
+                                <a class="nav-link" href="#">Active Que</a>
                             </li>
                             <li class="nav-item px-4">
-                                <a class="nav-link" href="#">Link 3</a>
+                                <a class="nav-link" href="#">Process Tracker</a>
                             </li>
-                            <li class="nav-item px-4">
-                                <a class="nav-link" href="#">Link 4</a>
-                            </li>
-                            <li class="nav-item flex-right">
-                                <a class="nav-link disabled" href="#">Disabled</a>
+                            <li class="nav-item float-right">
+                                <a class="nav-link" href="#">Settings</a>
                             </li>
                         </ul>
                     </div>
