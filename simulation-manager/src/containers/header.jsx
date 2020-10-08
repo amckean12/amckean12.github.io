@@ -2,7 +2,7 @@
 import React from 'react';
 
 //Components
-import NavItem from './components/nav-item.jsx';
+import NavItem from '../components/nav-item.jsx';
 
 class Header extends React.Component {
 
@@ -14,12 +14,18 @@ class Header extends React.Component {
                 links.push(
                     <NavItem 
                         name={linkValues[item].name}
+                        handleClick= {this.handleClick}
                     />
                 )     
             }
         }
         return links
     }
+
+    handleClick = () => {
+        console.log("Clicked")
+    }
+
     render(){
         return(
             <header className="container-fluid p-0">

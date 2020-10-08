@@ -2,19 +2,11 @@
 import React from 'react';
 
 //Components
-import Header from './header.jsx';
-
-//Data
-import config from './config.js';
-
+import Main from './containers/main.jsx';
 
 function App() {
   return (
-    <div className="App">
-      <Header 
-        headerConfig = {config.header}
-      />
-    </div>
+      <Main />
   );
 }
 
