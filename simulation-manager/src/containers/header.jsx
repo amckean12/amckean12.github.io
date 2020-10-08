@@ -10,22 +10,6 @@ import { connect } from 'react-redux';
 
 class Header extends React.Component {
 
-    renderNavLinks = () => {
-        const links = []; 
-        let linkValues = this.props.headerConfig.navItems
-        if (typeof linkValues != "undefined"){
-            for (let item in linkValues){
-                links.push(
-                    <NavItem 
-                        name={linkValues[item].name}
-                        className = {linkValues[item].className}
-                    />
-                )     
-            }
-        }
-        return links
-    }
-
     render(){
         return(
             <header className="container-fluid p-0">
@@ -33,7 +17,18 @@ class Header extends React.Component {
                     <a className="navbar-brand pr-4" href="#">{this.props.headerConfig.appName}</a>
                     <div className="navbar-nav">
                         <ul className="navbar-nav mr-auto">
-                            {this.renderNavLinks()}
+                            <li className="nav-item p-3">
+                                <a className="nav-link" href="#" onClick={this.props.addSimulationScheduler}>Simulation Scheduler</a>
+                            </li>
+                            <li className="nav-item p-3">
+                                <a className="nav-link" href="#" onClick={this.props.addActiveQue}>Active Que</a>
+                            </li>
+                            <li className="nav-item p-3">
+                                <a className="nav-link" href="#" onClick={this.props.addProcessTracker}>Process Tracker</a>
+                            </li>
+                            <li className="nav-item p-3">
+                                <a className="nav-link" href="#" onClick={this.props.addSettings}>Settings</a>
+                            </li>
                         </ul>
                     </div>
                     <div className="d-flex header--logo-cotainer">
@@ -48,10 +43,10 @@ class Header extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    addActiveQue: routeName => dispatch({type: "NAV_ACTIVE_QUE", routeName}),
-    addProcessTracker: routeName => dispatch({type: "NAV_PROCESS_TRACKER", routeName}),
-    addActiveQue: routeName => dispatch({type: "NAV_SETTINGS", routeName}),
-    addActiveQue: routeName => dispatch({type: "NAV_SIMULATION_SCHEDULER", routeName}),
+    addActiveQue: routeName => dispatch({type: "NAV_ACTIVE_QUE"}),
+    addProcessTracker: routeName => dispatch({type: "NAV_PROCESS_TRACKER"}),
+    addSettings: routeName => dispatch({type: "NAV_SETTINGS"}),
+    addSimulationScheduler: routeName => dispatch({type: "NAV_SIMULATION_SCHEDULER"}),
 })
 
-export default connect(mapDispatchToProps)(Header);
+export default connect(null, mapDispatchToProps)(Header);

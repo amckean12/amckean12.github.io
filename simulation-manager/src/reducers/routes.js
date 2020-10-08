@@ -9,7 +9,7 @@ export default function reducer(state = initialState, action) {
         case 'NAV_PROCESS_TRACKER':
             return {...state, currentRoute: "/process-tracker"}
         case 'NAV_SETTINGS':
-            return {...state, currentRoute: "/setttings"}
+            return {...state, currentRoute: "/settings"}
         case 'NAV_SIMULATION_SCHEDULER':
             return {...state, currentRoute: "/simulation-scheduler"}
         default:

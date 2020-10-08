@@ -4,7 +4,7 @@ const config = {
         "navItems": {
             "item1": {
                 "name": 'Simulation Manager',
-                "className": 'simulation-manager'
+                "className": 'simulation-manager',
             },
             "item2": {
                 "name": 'Active Que',
