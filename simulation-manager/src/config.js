@@ -3,16 +3,20 @@ const config = {
         "appName": "Simulation Manager",
         "navItems": {
             "item1": {
-                "name": 'Simulation Manager'
+                "name": 'Simulation Manager',
+                "className": 'simulation-manager'
             },
             "item2": {
-                "name": 'Active Que'
+                "name": 'Active Que',
+                "className": 'active-que'
             },
             "item3": {
-                "name": 'Process Tracker'
+                "name": 'Process Tracker',
+                "className": 'process-tracker'
             },
             "item4": {
-                "name": 'Setttings'
+                "name": 'Setttings',
+                "className": 'settings'
             },
         },
     },

@@ -14,17 +14,16 @@ import config from '../config.js';
 
 class Main extends React.Component {
 
-    renderMainSection = () => {
-        const section = "Simulation Manager"
+    renderMainComponent = () => {
+        
     }
-
     render(){
         return(
             <div className="App">
                 <Header 
                     headerConfig = {config.header}
                 />
-                {this.renderMainSection()}
+                { this.renderMainComponent() }
             </div>
         )
     }

@@ -4,6 +4,10 @@ import React from 'react';
 //Components
 import NavItem from '../components/nav-item.jsx';
 
+//Functions
+import { connect } from 'react-redux';
+
+
 class Header extends React.Component {
 
     renderNavLinks = () => {
@@ -14,16 +18,12 @@ class Header extends React.Component {
                 links.push(
                     <NavItem 
                         name={linkValues[item].name}
-                        handleClick= {this.handleClick}
+                        className = {linkValues[item].className}
                     />
                 )     
             }
         }
         return links
-    }
-
-    handleClick = () => {
-        console.log("Clicked")
     }
 
     render(){
@@ -47,4 +47,11 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+const mapDispatchToProps = dispatch => ({
+    addActiveQue: routeName => dispatch({type: "NAV_ACTIVE_QUE", routeName}),
+    addProcessTracker: routeName => dispatch({type: "NAV_PROCESS_TRACKER", routeName}),
+    addActiveQue: routeName => dispatch({type: "NAV_SETTINGS", routeName}),
+    addActiveQue: routeName => dispatch({type: "NAV_SIMULATION_SCHEDULER", routeName}),
+})
+
+export default connect(mapDispatchToProps)(Header);
