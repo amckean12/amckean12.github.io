@@ -16,6 +16,17 @@ const config = {
             },
         },
     },
+    'body': {
+        "simulationManager": {
+            "title": "Simulation Manager"
+        },
+        "activeQue": {
+            "title": "Active Que"
+        },
+        "processTracker": {
+            "title": "Process Tracker"
+        },
+    }
 }
 
 export default config
