@@ -8,6 +8,8 @@ export default function reducer(state = initialState, action) {
             return {...state, currentProcessor: "wichita"}
         case 'TOPEKA_PROCESSOR':
             return {...state, currentProcessor: "topeka"}
+        case 'HOUSTON_PROCESSOR':
+            return {...state, currentProcessor: "houston"}
         default:
             return state;
     }

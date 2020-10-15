@@ -4,8 +4,10 @@ import React from 'react';
 class SettingsContainer extends React.Component {
     render(){
         return(
-            <main className="settings-container">
-                Settings Container
+            <main className="container pt-4 settings-container">
+                Placed holder for other needed items. 
+                Admin
+                User Settings
             </main>
         )
     }

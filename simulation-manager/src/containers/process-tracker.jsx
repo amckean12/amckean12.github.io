@@ -8,16 +8,21 @@ import { connect } from 'react-redux';
 import processors from '../processors.js';
 
 class ProcessTrackerContainer extends React.Component {
+    componentDidUpdate(){
+        this.renderProcessors()
+    }
 
     renderProcessors = (location) => {
-        const processorListData = processors.wichita
+        const currentProc = this.props.currentProcessor
+        const processorListData = processors[currentProc]
+        debugger;
         const processorRenderList = []
         for (const proc in processorListData ){
             processorRenderList.push(
                 <tr>
                     <td>{processorListData[proc].name}</td>
                     <td>{processorListData[proc].IPAdress}</td>
-                    <td>{processorListData[proc].ProcessorStatus}</td>
+                    <td className={`table__row-item--${processorListData[proc].config.prcStatusClass}`}>{processorListData[proc].ProcessorStatus}</td>
                     <td>{processorListData[proc].Utilization}</td>
               </tr>)
         }
@@ -27,23 +32,34 @@ class ProcessTrackerContainer extends React.Component {
     render(){
         return(
             <main className="mx-2 process-tracker-container">
-                <section className="col-md-8 pt-4 processor-tracker-section">
-                    <table className="table">
-                        <thead>
-                            <tr>
-                                <th scope="col">Processor Name</th>
-                                <th scope="col">IP Address</th>
-                                <th scope="col">Processor Status</th>
-                                <th scope="col">Utilization</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            { this.renderProcessors() }
-                        </tbody>
-                    </table>
-                </section>
-                <section className="col-md-2">
-
+                <section className="row pt-4">
+                    <div className="col-md-8 processor-tracker-section">
+                        <table className="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Processor Name</th>
+                                    <th scope="col">IP Address</th>
+                                    <th scope="col">Processor Status</th>
+                                    <th scope="col">Utilization %</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                { this.renderProcessors() }
+                            </tbody>
+                        </table>
+                    </div>
+                    <div className="col-md-4">
+                        <div class="dropdown">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Processor List
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#" onClick={this.props.changeProcessorWichita}>Wichita</a>
+                                <a class="dropdown-item" href="#" onClick={this.props.changeProcessorTopeka}>Topeka</a>
+                                <a class="dropdown-item" href="#" onClick={this.props.changeProcessorHouston}>Houston</a>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </main>
         )
@@ -51,11 +67,13 @@ class ProcessTrackerContainer extends React.Component {
 }
 
 const mapStateToProps = session => ({
-    currentRoute: session.processors.currentProcessor
+    currentProcessor: session.processors.currentProcessor
 })
 
 const mapDispatchToProps = dispatch => ({
-
+    changeProcessorHouston: procName => dispatch({type: "HOUSTON_PROCESSOR"}),
+    changeProcessorTopeka: procName => dispatch({type: "TOPEKA_PROCESSOR"}),
+    changeProcessorWichita: procName => dispatch({type: "WICHITA_PROCESSOR"}),
 })
 
 

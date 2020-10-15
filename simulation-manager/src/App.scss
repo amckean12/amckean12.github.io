@@ -1,0 +1,15 @@
+//Table Styling 
+
+.table {
+    .table__row-item {
+        &--active {
+            color: #27AE60
+        }
+        &--assigned {
+            color: #F39C12
+        }
+        &--inactive {
+            color: #8C1717
+        }      
+    }
+}
