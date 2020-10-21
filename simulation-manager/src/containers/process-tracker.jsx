@@ -15,7 +15,6 @@ class ProcessTrackerContainer extends React.Component {
     renderProcessors = (location) => {
         const currentProc = this.props.currentProcessor
         const processorListData = processors[currentProc]
-        debugger;
         const processorRenderList = []
         for (const proc in processorListData ){
             processorRenderList.push(

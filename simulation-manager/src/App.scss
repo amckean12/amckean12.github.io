@@ -2,14 +2,20 @@
 
 .table {
     .table__row-item {
-        &--active {
+        &--active,
+        &--complete {
             color: #27AE60
         }
-        &--assigned {
+        &--assigned,
+        &--in-progress {
             color: #F39C12
         }
-        &--inactive {
+        &--inactive,
+        &--failed {
             color: #8C1717
+        }
+        &--waiting {
+            color: #abd7eb
         }      
     }
 }
