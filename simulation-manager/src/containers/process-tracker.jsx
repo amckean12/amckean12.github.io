@@ -47,7 +47,7 @@ class ProcessTrackerContainer extends React.Component {
                             </tbody>
                         </table>
                     </div>
-                    <div className="col-md-4">
+                    <div className="col-md-4 d-flex justify-content-around">
                         <div class="dropdown">
                             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Processor List

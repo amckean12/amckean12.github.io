@@ -66,18 +66,32 @@ class SimulationSchedulerContainer extends React.Component {
                 </section>
                 <section className="row w-100">
                     <div className="col-md-6">
-                        <div className="plan-list__header">
-                            <h3 className="plan-list__header-content p-3">Plan List</h3>
+                        <div className="plan-list__header p-3">
+                            <h3 className="plan-list__header-content">Plan List</h3>
+                            <p className="font-italic">Click and Drag Unsteady HECRAS Plan File</p>
                         </div>
                     </div>
                     <div className="col-md-6">
                         <div className="plan-dependencies__header p-3">
                             <h3 className="plan-dependencies__header-content">Dependencies</h3>
+                            <p className="font-italic">User Manually Enter</p>
                         </div>
                     </div>
                 </section>
-                <section className="row footer w-100">
-                    
+                <section className="row fixed-bottom pt-3 border-top">
+                    <div className="col-md-6">
+                        <div className="button-wrapper d-flex justify-content-center p-2">
+                            <button type="button" class="btn btn-outline-secondary">Load Saved List</button>
+                        </div>
+                        <div className="button-wrapper d-flex justify-content-center p-2">
+                            <button type="button" class="btn btn-outline-secondary">Save List</button>
+                        </div>
+                    </div>
+                    <div className="col-md-6">
+                        <div className="button-wrapper d-flex justify-content-center p-2">
+                            <button type="button" class="btn btn-outline-secondary">Add to Que</button>
+                        </div>
+                    </div>
                 </section>
             </main>
         )
