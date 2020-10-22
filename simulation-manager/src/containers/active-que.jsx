@@ -6,18 +6,27 @@ import { connect } from 'react-redux';
 
 //Data
 import activeSimulations from '../activeSimulations.js'
+import activeSimulationsUser from '../activeSimulationsName.js'
 
 class ActiveQueContainer extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            simulationList: []
+            simulationList: [],
+            orderList: [],
+            sortingFactor: "inputPriority",
         }
     }
+
+    componentDidMount(){
+        this.setActiveSimulationState();
+    }
+
     
     setActiveSimulationState = () => {
+        const localSimulationList = []
         for (const simulation in activeSimulations){
-            this.state.simulationList.push(
+            localSimulationList.push(
                 <tr>
                     <td>{activeSimulations[simulation].inputPriority}</td>
                     <td>{activeSimulations[simulation].user}</td>
@@ -29,12 +38,13 @@ class ActiveQueContainer extends React.Component {
                 </tr>
             )
         }
+        this.setState({simulationList: localSimulationList})
     }
     render(){
         return(
             <main className="mx-2 acitve-que-container">
                 <section className="process-tracker-section pt-4">
-                    <table className="table">
+                    <table className="table table-striped table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">Input Priority</th>

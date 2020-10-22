@@ -33,7 +33,7 @@ class ProcessTrackerContainer extends React.Component {
             <main className="mx-2 process-tracker-container">
                 <section className="row pt-4">
                     <div className="col-md-8 processor-tracker-section">
-                        <table className="table">
+                        <table className="table table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th scope="col">Processor Name</th>
